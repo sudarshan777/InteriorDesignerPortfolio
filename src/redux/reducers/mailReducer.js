@@ -6,9 +6,11 @@ const initialUserObj = {
 
 const handleMailServerResponse = (state, action) => {
   let newState = { ...state };
+  const result = JSON.parse(JSON.stringify(action.result));
+  console.log(result);
   if (action.result !== undefined) {
     newState = Object.assign({}, state, {
-      message: action.result,
+      message: JSON.parse(JSON.stringify(action.result)),
     });
   }
   return { ...newState };
