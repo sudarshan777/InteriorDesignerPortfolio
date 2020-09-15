@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { sendMail } from "../../redux/actions/mailActions";
 
 const Contact = () => {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -14,11 +18,12 @@ const Contact = () => {
       subject: subject,
       message: message,
     };
+
+    dispatch(sendMail(newDetails));
     setName("");
     setEmail("");
     setSubject("");
     setMessage("");
-    console.log(newDetails);
     alert("Message sent");
   };
   return (
