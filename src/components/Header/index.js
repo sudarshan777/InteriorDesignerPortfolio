@@ -5,8 +5,9 @@ export class Header extends Component {
   render() {
     return (
       <div>
-        <Link to="/"> Home</Link> |<Link to="/work"> Work</Link>|
-        <Link to="/contact"> Contact</Link>
+        <Link to="/"> Home</Link> | <Link to="/portfolio"> Portfolio</Link> |{" "}
+        <Link to="/testimonials"> Testimonials</Link> |
+        <Link to="/shop"> Shop</Link> | <Link to="/contact"> Contact</Link>
       </div>
     );
   }
