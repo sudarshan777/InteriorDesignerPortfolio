@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { sendMail } from "../../redux/actions/mailActions";
+import GoogleMap from "./googleMap";
 
 const Contact = () => {
   const dispatch = useDispatch();
@@ -90,6 +91,7 @@ const Contact = () => {
       </div>
       <div>
         <h1>Show google map</h1>
+        <GoogleMap />
       </div>
     </div>
   );

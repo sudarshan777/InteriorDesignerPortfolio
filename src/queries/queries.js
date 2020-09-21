@@ -40,9 +40,40 @@ const getLivingAreasQuery = gql`
     }
   }
 `;
+const getTestimonialsQuery = gql`
+  {
+    testimonials {
+      id
+      name
+      project
+      comment
+    }
+  }
+`;
+const addTestimonialMutation = gql`
+  mutation(
+    $name: String!
+    $email: String!
+    $project: String!
+    $comment: String!
+  ) {
+    addTestimonial(
+      name: $name
+      email: $email
+      project: $project
+      comment: $comment
+    ) {
+      name
+      project
+      comment
+    }
+  }
+`;
 export {
   getKitchensQuery,
   getBedroomsQuery,
   getBathroomsQuery,
   getLivingAreasQuery,
+  getTestimonialsQuery,
+  addTestimonialMutation,
 };

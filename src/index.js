@@ -4,12 +4,12 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import "bootstrap/dist/css/bootstrap.css";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
+  uri: "https://yashadesignstudioserver.herokuapp.com/graphql",
 });
 ReactDOM.render(
   <ApolloProvider client={client}>

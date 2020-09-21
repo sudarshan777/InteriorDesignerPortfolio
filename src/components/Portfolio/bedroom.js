@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getBedroomsQuery } from "../../queries/queries";
+const url = "https://yashadesignstudioserver.herokuapp.com/images";
 
 class Bedroom extends Component {
   displayBedrooms = () => {
@@ -15,7 +16,7 @@ class Bedroom extends Component {
             <p>{bedroom.description}</p>
             <img
               alt={bedroom.name}
-              src={bedroom.pictureUrl}
+              src={`${url}/${bedroom.pictureUrl}`}
               width="500"
               height="500"
             />
