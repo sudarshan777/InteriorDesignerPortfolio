@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getLivingAreasQuery } from "../../queries/queries";
+const url = "https://yashadesignstudioserver.herokuapp.com/images";
 
 class LivingArea extends Component {
   displayLivingAreas = () => {
@@ -15,7 +16,7 @@ class LivingArea extends Component {
             <p>{livingArea.description}</p>
             <img
               alt={livingArea.name}
-              src={livingArea.pictureUrl}
+              src={`${url}/${livingArea.pictureUrl}`}
               width="500"
               height="500"
             />

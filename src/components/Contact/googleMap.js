@@ -1,19 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 
-const GoogleMap = () => {
-  const initMap = () => {
-    // The location of Uluru
-    var uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    var map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: uluru,
+class GoogleMap extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.googleMapRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const googleScript = document.createElement("script");
+
+    googleScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyA3gzcOS3xx1rdqpdaI8IpVKj6hV1cGqHw&libraries=places`;
+
+    window.document.body.appendChild(googleScript);
+    googleScript.addEventListener("load", () => {
+      this.googleMap = this.createGoogleMap();
+      this.marker = this.createMarker();
     });
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({ position: uluru, map: map });
+  }
+
+  createGoogleMap = () => {
+    let map = new window.google.maps.Map(this.googleMapRef.current, {
+      zoom: 16,
+      center: {
+        lat: 21.235422,
+        lng: 81.604807,
+      },
+      disableDefaultUI: true,
+    });
+    return map;
   };
 
-  return <div id="map"></div>;
-};
+  createMarker = () =>
+    new window.google.maps.Marker({
+      position: { lat: 21.235422, lng: 81.604807 },
+      map: this.googleMap,
+      visible: true,
+    });
+
+  render() {
+    return (
+      <div
+        id="google-map"
+        ref={this.googleMapRef}
+        style={{ width: "400px", height: "300px" }}
+      />
+    );
+  }
+}
 
 export default GoogleMap;

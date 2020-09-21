@@ -1,11 +1,15 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import * as Types from "../actions/types";
 
-const baseUrl = "http://localhost:4000";
+const baseUrl = "https://yashadesignstudioserver.herokuapp.com";
 
 function GetDataFromServerToPost(apiPath, reqMethod, formBody) {
   let myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
+  myHeaders.append(
+    "Access-Control-Allow-Origin",
+    "https://yashadesignstudioserver.herokuapp.com"
+  );
   console.log(myHeaders);
   const requestOptions = {
     method: "POST",
