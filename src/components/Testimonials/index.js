@@ -57,43 +57,49 @@ function Testimonials() {
       <h4>Write Testimonials</h4>
       <div>
         <form onSubmit={onSubmit}>
-          <div>
+          <div className="form-group">
             <label> Name:</label>
             <input
               type="text"
               required
               value={name}
+              className="form-control"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div>
+          <div className="form-group">
             <label> Email:</label>
             <input
               type="email"
               required
               value={email}
+              className="form-control"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div>
+          <div className="form-group">
             <label> Project:</label>
             <input
               type="text"
               required
               value={project}
+              className="form-control"
               onChange={(e) => setProject(e.target.value)}
             />
           </div>
-          <div>
+          <div className="form-group">
             <label> Comment:</label>
             <input
               type="text"
               required
               value={comment}
+              className="form-control"
               onChange={(e) => setComment(e.target.value)}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className="btn btn-primary" type="submit">
+            Submit
+          </button>
         </form>
         <p>Note Comments will be posted after verification</p>
       </div>

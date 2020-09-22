@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
@@ -11,12 +12,10 @@ import Kitchen from "./components/Portfolio/kitchen";
 import Bathroom from "./components/Portfolio/bathroom";
 import Bedroom from "./components/Portfolio/bedroom";
 import LivingArea from "./components/Portfolio/livingArea";
-import "./app.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Yasha Design Studio</h1>
+    <div className="container-fluid">
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -29,6 +28,7 @@ function App() {
         <Route exact path="/portfolio-bedroom" component={Bedroom} />
         <Route exact path="/portfolio-livingArea" component={LivingArea} />
       </Switch>
+      <Footer />
     </div>
   );
 }
