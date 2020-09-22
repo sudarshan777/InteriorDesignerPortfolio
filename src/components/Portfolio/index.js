@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const url = "https://yashadesignstudioserver.herokuapp.com/images";
 const Portfolio = () => {
@@ -16,7 +17,13 @@ const Portfolio = () => {
             className="card-img-top"
           />
           <div className="card-body">
-            <h5 className="card-title">Living Area</h5>
+            <Link
+              className=" card-title
+              stretched-link"
+              to="/portfolio-livingArea"
+            >
+              Living Area
+            </Link>
             <p className="card-text">
               Quis in tempor fugiat sit excepteur consequat.
             </p>
@@ -32,7 +39,13 @@ const Portfolio = () => {
             className="card-img-top"
           />
           <div className="card-body">
-            <h5 className="card-title">Bedroom </h5>
+            <Link
+              className=" card-title
+              stretched-link"
+              to="/portfolio-bedroom"
+            >
+              Bedroom
+            </Link>
             <p className="card-text">
               Quis in tempor fugiat sit excepteur consequat.
             </p>
@@ -48,7 +61,14 @@ const Portfolio = () => {
             className="card-img-top"
           />
           <div className="card-body">
-            <h5 className="card-title">Kitchen </h5>
+            <Link
+              className=" card-title
+              stretched-link"
+              to="/portfolio-kitchen"
+            >
+              Kitchen
+            </Link>
+
             <p className="card-text">
               Quis in tempor fugiat sit excepteur consequat.
             </p>
@@ -64,7 +84,13 @@ const Portfolio = () => {
             className="card-img-top"
           />
           <div className="card-body">
-            <h5 className="card-title">Bathroom </h5>
+            <Link
+              className=" card-title
+              stretched-link"
+              to="/portfolio-bathroom"
+            >
+              Bathroom
+            </Link>
             <p className="card-text">
               Quis in tempor fugiat sit excepteur consequat.
             </p>

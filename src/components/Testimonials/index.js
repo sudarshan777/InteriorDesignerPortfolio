@@ -22,9 +22,10 @@ function Testimonials() {
       return data.testimonials.map((testimonial) => {
         return (
           <div key={testimonial.id}>
-            <h2>{testimonial.name}</h2>
-            <h4>{testimonial.project}</h4>
-            <p>{testimonial.comment}</p>
+            <blockquote className="blockquote text-center">
+              <p className="mb-0"> {testimonial.comment}</p>
+              <footer className="blockquote-footer">{testimonial.name}</footer>
+            </blockquote>
           </div>
         );
       });
@@ -51,7 +52,6 @@ function Testimonials() {
   return (
     <div>
       <h3>Testimonials</h3>
-      <h4>Show Testimonials</h4>
       {displayTestimonials()}
       <hr />
       <h4>Write Testimonials</h4>
@@ -106,10 +106,5 @@ function Testimonials() {
     </div>
   );
 }
-
-// export default compose(
-//   graphql(getTestimonialsQuery, { name: "getTestimonialsQuery" }),
-//   graphql(addTestimonialMutation, { name: "addTestimonialMutation" })
-// )(Testimonials);
 
 export default Testimonials;
