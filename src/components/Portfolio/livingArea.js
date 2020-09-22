@@ -13,35 +13,65 @@ class LivingArea extends Component {
         return (
           <div
             id="carouselExampleCaptions"
-            className="carousel slide carousel-fade"
+            className="carousel slide"
             data-ride="carousel"
           >
             <ol className="carousel-indicators">
-              {data.livingAreas.map((index) => {
-                return (
-                  <li
-                    data-target="#carouselExampleCaptions"
-                    data-slide-to={`${index}`}
-                    key={index}
-                  ></li>
-                );
+              {data.livingAreas.map((livingArea, index) => {
+                if (index === 0) {
+                  return (
+                    <li
+                      data-target="#carouselExampleCaptions"
+                      data-slide-to={`${index}`}
+                      key={livingArea.id + 10}
+                      className="active"
+                    ></li>
+                  );
+                } else {
+                  return (
+                    <li
+                      data-target="#carouselExampleCaptions"
+                      data-slide-to={`${index}`}
+                      key={livingArea.id + 10}
+                    ></li>
+                  );
+                }
               })}
             </ol>
             <div className="carousel-inner">
-              {data.livingAreas.map((livingArea) => {
-                return (
-                  <div className="carousel-item-active" key={livingArea.id}>
-                    <img
-                      src={`${url}/${livingArea.pictureUrl}`}
-                      className="d-block w-100"
-                      alt={livingArea.name}
-                    />
-                    <div className="carousel-caption d-none d-md-block">
-                      <h5>{livingArea.name}</h5>
-                      <p>{livingArea.description}</p>
+              {data.livingAreas.map((livingArea, index) => {
+                if (index === 0) {
+                  return (
+                    <div
+                      className="carousel-item active"
+                      key={livingArea.id + 5}
+                    >
+                      <img
+                        src={`${url}/${livingArea.pictureUrl}`}
+                        className="d-block w-100"
+                        alt={livingArea.name}
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <h5>{livingArea.name}</h5>
+                        <p>{livingArea.description}</p>
+                      </div>
                     </div>
-                  </div>
-                );
+                  );
+                } else {
+                  return (
+                    <div className="carousel-item" key={livingArea.id + 5}>
+                      <img
+                        src={`${url}/${livingArea.pictureUrl}`}
+                        className="d-block w-100"
+                        alt={livingArea.name}
+                      />
+                      <div className="carousel-caption d-none d-md-block">
+                        <h5>{livingArea.name}</h5>
+                        <p>{livingArea.description}</p>
+                      </div>
+                    </div>
+                  );
+                }
               })}
             </div>
             <a
